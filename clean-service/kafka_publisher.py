@@ -11,5 +11,5 @@ class KafkaPublisher:
 
     def produce_data(self,data):
         value = json.dumps(data).encode("utf-8")
-        self.producer.produce(topic="Clean",value=value)
+        self.producer.produce(topic=config.kafka_topic_p,value=value)
         self.producer.flush()
