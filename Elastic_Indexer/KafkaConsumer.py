@@ -12,9 +12,9 @@ class KafkaConsumer:
             "group.id": "elastic_service",
             "auto.offset.reset": "earliest"
                            }
-
+        topics = [config.kafka_topic_1,config.kafka_topic_2,config.kafka_topic_3]
         self.consumer = Consumer(consumer_config)     # type: ignore
-        self.consumer.subscribe([config.kafka_topic_1,config.kafka_topic_2,config.kafka_topic_3])
+        self.consumer.subscribe(topics)
 
 
     def get_data_from_producer(self):
