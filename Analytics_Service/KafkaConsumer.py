@@ -14,7 +14,7 @@ class KafkaConsumer:
             }
 
         self.consumer = Consumer(consumer_config)     # type: ignore
-        self.consumer.subscribe(["Clean"])
+        self.consumer.subscribe([config.kafka_topic_c])
 
 
     def get_data_from_producer(self):
