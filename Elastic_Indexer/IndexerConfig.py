@@ -7,4 +7,5 @@ class IndexerConfig:
         self.kafka_topic_1 = os.getenv("KAFKA_TOPIC_RAW","Raw")
         self.kafka_topic_2 = os.getenv("KAFKA_TOPIC_CLEAN","Clean")
         self.kafka_topic_3 = os.getenv("KAFKA_TOPIC_ANALYTICS","Analytics")
+        
 config = IndexerConfig()
