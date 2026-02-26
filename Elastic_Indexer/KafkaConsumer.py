@@ -7,7 +7,11 @@ class KafkaConsumer:
     def __init__(self):
         
         
-        consumer_config = {"bootstrap.servers": config.kafka_servers ,"group.id": "elastic_service","auto.offset.reset": "earliest"}
+        consumer_config = {
+            "bootstrap.servers": config.kafka_servers ,
+            "group.id": "elastic_service",
+            "auto.offset.reset": "earliest"
+                           }
 
         self.consumer = Consumer(consumer_config)     # type: ignore
         self.consumer.subscribe([config.kafka_topic_1,config.kafka_topic_2,config.kafka_topic_3])
