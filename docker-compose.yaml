@@ -46,8 +46,8 @@ services:
       - 27017:27017
 
   ingestion_service:
-    build: ./ingestion_service
-    container_name: ingestion_service
+    build: ./Ingestion_Service
+    container_name: Ingestion_Service
     ports:
       - 8000:8000
     environment:
@@ -66,7 +66,7 @@ services:
       - mongo
   
   clean_service:
-    build: ./clean_service
+    build: ./clean-service
     container_name: clean_service
     environment:
       - KAFKA_URI=kafka:9092
@@ -75,8 +75,8 @@ services:
       - ingestion_service
 
   analytics_service:
-    build: ./analytics_service
-    container_name: analytics_service
+    build: ./Analytics_Service
+    container_name: Analytics_Service
     environment:
       - KAFKA_URI=kafka:9092
     depends_on:
